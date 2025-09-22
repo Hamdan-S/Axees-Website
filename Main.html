@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Axees</title>
+    <link rel="icon" type="image/x-icon" href="/Images/favicon-196x196.png" sizes="favicon-196x196">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 800px; /* reduced for mobile */
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  width: 100%;
+  background: #f5f5f7;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-image: linear-gradient(rgba(73, 73, 73, 0.7) .1em, transparent .1em), linear-gradient(90deg, rgba(73, 73, 73, 0.7) .1em, transparent .1em);
+  background-size: 10rem 10rem;
+}
+
+.fade-in-apple {
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  transition: all 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.fade-in-apple.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.box {
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  font-size: 2rem;
+  color: #1d1d1f;
+  text-align: center;
+  background: rgba(255, 255, 255, .8);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.686);
+  backdrop-filter: blur(0.6px);
+  -webkit-backdrop-filter: blur(0.6px);
+  border: 1px solid rgba(52, 50, 50, 0.51);
+  max-width: 90%;
+  word-wrap: break-word;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 10rem); /* scales with screen */
+  text-align: center;
+  margin: 1rem 0;
+}
+
+h1:hover {
+  text-decoration: underline;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  text-align: center;
+}
+
+.imgbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 100%;
+}
+
+.imgbox img {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.567);
+  transition: transform 0.4s ease;
+}
+
+.imgbox img:hover {
+  transform: scale(2);
+}
+
+footer {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    gap: 500px;
+  }
+
+  .box {
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+
+  .imgbox img {
+    max-width: 120px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    gap: 800px;
+  }
+
+  .box {
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  .imgbox img {
+    max-width: 100px;
+  }
+  
+}
+
+
+  </style>
+</head>
+<body>
+  <h1>Axees</h1>
+  <br>
+  <h3>An upcoming design studio.</h3>
+  <br>
+    <h3>With creativity & passion in mind.</h3>
+  <div class="fade-in-apple box">
+    ✅ Design Solves Issues
+  </div>
+
+  <div class="fade-in-apple box">
+    😊 Design Sells Emotions
+  </div>
+
+  <div class="fade-in-apple box">
+    ❌ Design Is Not Just A Template
+  </div>
+  <div class="fade-in-apple imgbox">
+      <h3>Example Flyers:</h3>
+    <img src="./Images/MarketingFlyer4.png" alt="Flyer 4">
+    <img src="./Images/MarketingFlyer3.png" alt="Flyer 3">
+    <img src="./Images/MarketingFlyer2.png" alt="Flyer 2">
+    <img src="./Images/MarketingFlyer.png" alt="Flyer 1">
+  </div>
+  <br>
+  <br>
+    <div class="fade-in-apple box">
+    Why is this field so important❓
+    <p>It's a lot more than just plain "art". Rather as explained above, design solves issues and helps sell an identity to your brand/business. Whether it be a retail store, physical product, youtube channel etc. <b>you</b> need to set yourself apart from others.</p>
+  </div>
+  <footer>
+  <p><b>Email Hamdan Sheikh (sh3ikh01@gmail.com) if you would like our service.<br>
+  <a href="https://mail.google.com/mail/u/0/#inbox">Email</a></b></p>
+</footer>
+
+  <script>
+    const elements = document.querySelectorAll('.fade-in-apple');
+    const interactiveBoxes = document.querySelectorAll('.box, .imgbox');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .1 }); // trigger when 20% visible
+
+    elements.forEach(el => observer.observe(el));
+
+    interactiveBoxes.forEach(box => {
+    box.addEventListener('mousemove', (e) => {
+      const rect = box.getBoundingClientRect();
+      const x = e.clientX - rect.left;   // mouse X inside element
+      const y = e.clientY - rect.top;    // mouse Y inside element
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const moveX = (x - centerX) / centerX;
+      const moveY = (y - centerY) / centerY;
+
+      box.style.transform = `
+        perspective(600px)
+        rotateY(${moveX * 10}deg)
+        rotateX(${moveY * -10}deg)
+        scale(1.03)
+      `;
+    });
+
+    // Reset when mouse leaves
+    box.addEventListener('mouseleave', () => {
+      box.style.transform = 'perspective(600px) rotateY(0) rotateX(0) scale(1)';
+      box.style.transition = 'transform 0.3s ease';
+      setTimeout(() => box.style.transition = '', 300); 
+    });
+  });
+
+
+
+  </script>
+</body>
+</html>
