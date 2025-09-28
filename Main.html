@@ -18,7 +18,7 @@ body {
   background: #f5f5f7;
   padding: 1rem;
   box-sizing: border-box;
-  background-image: linear-gradient(rgba(73, 73, 73, 0.7) .1em, transparent .1em), linear-gradient(90deg, rgba(73, 73, 73, 0.7) .1em, transparent .1em);
+  background-image: linear-gradient(rgba(73, 73, 73, 0.1) .1em, transparent .1em), linear-gradient(90deg, rgba(73, 73, 73, 0.1) .1em, transparent .1em);
   background-size: 10rem 10rem;
 }
 
@@ -39,13 +39,17 @@ body {
   font-size: 2rem;
   color: #1d1d1f;
   text-align: center;
-  background: rgba(255, 255, 255, .8);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.686);
+  background: rgba(255, 255, 255, 0.213);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.614);
   backdrop-filter: blur(0.6px);
   -webkit-backdrop-filter: blur(0.6px);
   border: 1px solid rgba(52, 50, 50, 0.51);
   max-width: 90%;
   word-wrap: break-word;
+}
+
+.box:hover{
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
 }
 
 h1 {
@@ -54,13 +58,13 @@ h1 {
   margin: 1rem 0;
 }
 
-h1:hover {
-  text-decoration: underline;
-}
-
 h3 {
   font-size: clamp(1.5rem, 4vw, 3rem);
   text-align: center;
+}
+
+p{
+    font-size: clamp(1rem, 1vw, 1.3rem); /* scales with screen */
 }
 
 .imgbox {
@@ -88,6 +92,34 @@ footer {
   font-size: 1rem;
   text-align: center;
   margin-top: 2rem;
+}
+
+button{
+  font-size: 1.2rem;
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #007bff58;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button:hover{
+  margin: 0 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #007bff9b;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+input{
+  width: 100%;
+  padding: 2px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 @media screen and (max-width: 768px) {
@@ -127,12 +159,21 @@ footer {
   }
   
 }
-
-
   </style>
 </head>
 <body>
+<div class="titleHeader">
   <h1>Axees</h1>
+  <br>
+  <br>
+</div>
+    <div class="fade-in-apple box question">
+    How are you today?
+    <br>
+    <br>
+    <button onclick="btnClick('happy')">😊</button> -  <button onclick="btnClick('neutral')">😐</button>
+    <br>
+  </div>
   <br>
   <h3>An upcoming design studio.</h3>
   <br>
@@ -158,8 +199,19 @@ footer {
   <br>
   <br>
     <div class="fade-in-apple box">
-    Why is this field so important❓
-    <p>It's a lot more than just plain "art". Rather as explained above, design solves issues and helps sell an identity to your brand/business. Whether it be a retail store, physical product, youtube channel etc. <b>you</b> need to set yourself apart from others.</p>
+    Artistic Inspirers
+    <br><img src="./Images/JonyandSteve.jpeg" alt="Jony and Steve">
+    <p>Jony Ive & Steve Jobs - Focused on the look and feel of a product, as well as changing how people see design.</p>
+     <br><img src="./Images/LeonardoDiVinci1.jpeg" alt="Jony and Steve">
+    <p>Artistic Genius</p>
+  </div>
+  <br>
+  <br>
+    <div class="fade-in-apple box form">
+    Would you like to report any critiques regarding this website?
+    <br>
+    <input type="text" id="suggestions" name="suggestions"><br>
+    <button>Submit</button>
   </div>
   <footer>
   <p><b>Email Hamdan Sheikh (sh3ikh01@gmail.com) if you would like our service.<br>
@@ -209,7 +261,15 @@ footer {
     });
   });
 
-
+  function btnClick(mood) {
+    let message = '';
+    if (mood === 'happy') {
+      message = "That's great to hear! Keep smiling 😊";
+    } else if (mood === 'neutral') {
+      message = "Hope your day gets better! Stay positive 🙂";
+    }
+    document.getElementsByClassName("fade-in-apple box question")[0].innerHTML = message;
+  }
 
   </script>
 </body>
