@@ -1,0 +1,140 @@
+/*
+==============================
+0. BASE STYLES & RESET
+==============================
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #1d1d1f; /* Near black */
+    background-color: #eeeded; /* Very light gray/off-white */
+}
+
+/* Centralizing container for content width */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2 {
+    font-weight: 700; /* Bold and impactful */
+    letter-spacing: -0.02em;
+}
+
+p {
+    font-weight: 400;
+}
+
+/*
+==============================
+1. NAVIGATION (HEADER)
+==============================
+*/
+#hero-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+}
+
+
+/*
+==============================
+2. HERO HEADER STYLES
+==============================
+*/
+#hero-header {
+    background-color: #eeeded; /* Clean white background */
+    text-align: center;
+    padding: 180px 0 100px; /* Ample vertical space (whitespace is key) */
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.hero-content .sub-headline {
+    font-size: 1.5rem;
+    color: #424245; /* Dark gray for subtext */
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+/* Button animation from Uiverse.io but edited by me. */ 
+.button {
+  cursor: pointer;
+  padding: 0.7em 1em;
+  border-radius: 0.5em;
+  min-height: 2.4em;
+  min-width: 3em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  font-weight: bold;
+  background: #4496bd;
+  color:#ffffff;
+  border: 0;
+  padding: 1.5%;
+  margin-left: 45%;
+}
+
+.button:hover {
+  transform: scale(1);
+  text-decoration: underline;
+  letter-spacing: 0.1em;
+}
+
+/*
+==============================
+6. FINAL CTA BLOCK
+==============================
+*/
+#cta-block {
+    text-align: center;
+    background-color: #292929;
+    padding: 80px 0;
+    border-top: 1px solid #b2b2b2; /* Subtle divider */
+}
+
+#cta-block p {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color:#ffffff
+}
+
+/*
+==============================
+7. FOOTER
+==============================
+*/
+#footer {
+    background-color: #eeeded;
+    border-top: 1px solid #b2b2b2;
+    padding: 30px 0;
+    font-size: 0.85rem;
+    color: #6e6e73;
+    text-align: center;
+}
+
+.footer-links a {
+    color: #6e6e73;
+    margin-left: 20px;
+}
+
+.iframe{
+    width: 100%;
+
+}
