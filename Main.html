@@ -1,276 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Axees</title>
-    <link rel="icon" type="image/x-icon" href="/Images/favicon-196x196.png" sizes="favicon-196x196">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  flex-direction: column;
-  gap: 800px; /* reduced for mobile */
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  width: 100%;
-  background: #f5f5f7;
-  padding: 1rem;
-  box-sizing: border-box;
-  background-image: linear-gradient(rgba(73, 73, 73, 0.1) .1em, transparent .1em), linear-gradient(90deg, rgba(73, 73, 73, 0.1) .1em, transparent .1em);
-  background-size: 10rem 10rem;
-}
-
-.fade-in-apple {
-  opacity: 0;
-  transform: translateY(20px) scale(0.98);
-  transition: all 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-.fade-in-apple.show {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-.box {
-  padding: 1.5rem 2rem;
-  border-radius: 16px;
-  font-size: 2rem;
-  color: #1d1d1f;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.213);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.614);
-  backdrop-filter: blur(0.6px);
-  -webkit-backdrop-filter: blur(0.6px);
-  border: 1px solid rgba(52, 50, 50, 0.51);
-  max-width: 90%;
-  word-wrap: break-word;
-}
-
-.box:hover{
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
-}
-
-h1 {
-  font-size: clamp(2.5rem, 8vw, 10rem); /* scales with screen */
-  text-align: center;
-  margin: 1rem 0;
-}
-
-h3 {
-  font-size: clamp(1.5rem, 4vw, 3rem);
-  text-align: center;
-}
-
-p{
-    font-size: clamp(1rem, 1vw, 1.3rem); /* scales with screen */
-}
-
-.imgbox {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  max-width: 100%;
-}
-
-.imgbox img {
-  max-width: 150px;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.567);
-  transition: transform 0.4s ease;
-}
-
-.imgbox img:hover {
-  transform: scale(2);
-}
-
-footer {
-  font-size: 1rem;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-button{
-  font-size: 1.2rem;
-  margin: 0 1rem;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: #007bff58;
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
-button:hover{
-  margin: 0 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  background-color: #007bff9b;
-  color: white;
-  transition: background-color 0.3s ease;
-}
-
-input{
-  width: 100%;
-  padding: 2px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-@media screen and (max-width: 768px) {
-  body {
-    gap: 500px;
-  }
-
-  .box {
-    font-size: 1.5rem;
-    padding: 1rem;
-  }
-
-  .imgbox img {
-    max-width: 120px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  body {
-    gap: 800px;
-  }
-
-  .box {
-    font-size: 1.2rem;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h3 {
-    font-size: 1.2rem;
-  }
-
-  .imgbox img {
-    max-width: 100px;
-  }
-  
-}
-  </style>
+    <title>Axees</title>
+    <link rel="stylesheet" href="Style.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="titleHeader">
-  <h1>Axees</h1>
-  <br>
-  <br>
-</div>
-    <div class="fade-in-apple box question">
-    How are you today?
-    <br>
-    <br>
-    <button onclick="btnClick('happy')">😊</button> -  <button onclick="btnClick('neutral')">😐</button>
-    <br>
-  </div>
-  <br>
-  <h3>An upcoming design studio.</h3>
-  <br>
-    <h3>With creativity & passion in mind.</h3>
-  <div class="fade-in-apple box">
-    ✅ Design Solves Issues
-  </div>
+    
+    <header id="hero-header">
+        <div class="container">
+            <div class="hero-content">
+                <img src="./Images/AxeesLogoMain_Metallic.png">
+                <p class="sub-headline">Elegant, Innovative, Human</p>
+            </div>
+        </div>
+    </header>
+    
+    <iframe class="iframe" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="850" src="https://embed.figma.com/design/MgxlX99CpI2etxZMmr0d4E/Axees-Design-Center?node-id=22-6&embed-host=share&footer=false&page-selector=false&theme=dark"></iframe>
 
-  <div class="fade-in-apple box">
-    😊 Design Sells Emotions
-  </div>
-
-  <div class="fade-in-apple box">
-    ❌ Design Is Not Just A Template
-  </div>
-  <div class="fade-in-apple imgbox">
-      <h3>Example Flyers:</h3>
-    <img src="./Images/MarketingFlyer4.png" alt="Flyer 4">
-    <img src="./Images/MarketingFlyer3.png" alt="Flyer 3">
-    <img src="./Images/MarketingFlyer2.png" alt="Flyer 2">
-    <img src="./Images/MarketingFlyer.png" alt="Flyer 1">
-  </div>
-  <br>
-  <br>
-    <div class="fade-in-apple box">
-    Artistic Inspirers
-    <br><img src="./Images/JonyandSteve.jpeg" alt="Jony and Steve">
-    <p>Jony Ive & Steve Jobs - Focused on the look and feel of a product, as well as changing how people see design.</p>
-     <br><img src="./Images/LeonardoDiVinci1.jpeg" alt="Jony and Steve">
-    <p>Artistic Genius</p>
-  </div>
-  <br>
-  <br>
-    <div class="fade-in-apple box form">
-    Would you like to report any critiques regarding this website?
-    <br>
-    <input type="text" id="suggestions" name="suggestions"><br>
-    <button>Submit</button>
-  </div>
-  <footer>
-  <p><b>Email Hamdan Sheikh (sh3ikh01@gmail.com) if you would like our service.<br>
-  <a href="https://mail.google.com/mail/u/0/#inbox">Email</a></b></p>
-</footer>
-
-  <script>
-    const elements = document.querySelectorAll('.fade-in-apple');
-    const interactiveBoxes = document.querySelectorAll('.box, .imgbox');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: .1 }); // trigger when 20% visible
-
-    elements.forEach(el => observer.observe(el));
-
-    interactiveBoxes.forEach(box => {
-    box.addEventListener('mousemove', (e) => {
-      const rect = box.getBoundingClientRect();
-      const x = e.clientX - rect.left;   // mouse X inside element
-      const y = e.clientY - rect.top;    // mouse Y inside element
-
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const moveX = (x - centerX) / centerX;
-      const moveY = (y - centerY) / centerY;
-
-      box.style.transform = `
-        perspective(600px)
-        rotateY(${moveX * 10}deg)
-        rotateX(${moveY * -10}deg)
-        scale(1.03)
-      `;
-    });
-
-    // Reset when mouse leaves
-    box.addEventListener('mouseleave', () => {
-      box.style.transform = 'perspective(600px) rotateY(0) rotateX(0) scale(1)';
-      box.style.transition = 'transform 0.3s ease';
-      setTimeout(() => box.style.transition = '', 300); 
-    });
-  });
-
-  function btnClick(mood) {
-    let message = '';
-    if (mood === 'happy') {
-      message = "That's great to hear! Keep smiling 😊";
-    } else if (mood === 'neutral') {
-      message = "Hope your day gets better! Stay positive 🙂";
-    }
-    document.getElementsByClassName("fade-in-apple box question")[0].innerHTML = message;
-  }
-
-  </script>
+    <footer id="footer">
+        <div class="container">
+            <a href="mailto:hamdan.sh3ikh01@gmail.com"><p>&copy; 2025, Please email hamdan.sh3ikh01@gmail.com if you have any questions about this website.</p></a>
+        </div>
+    </footer>
 </body>
 </html>
